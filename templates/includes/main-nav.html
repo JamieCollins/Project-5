@@ -5,10 +5,10 @@
                 Main Courses
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Burgers</a>
-                <a href="" class="dropdown-item ">Pizzas</a>
-                <a href="" class="dropdown-item ">Pasta</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All</a>
+                <a href="{% url 'products' %}?category=burger" class="dropdown-item">Burgers</a>
+                <a href="{% url 'products' %}?category=pizza" class="dropdown-item ">Pizzas</a>
+                <a href="{% url 'products' %}?category=pasta" class="dropdown-item ">Pasta</a>
+                <a href="{% url 'products' %}?category=burger,pizza,pasta,fries,garlic_bread,cheese,sauce,ketchup,mayo,ice_cream,,desserts,cakes,cookies" class="dropdown-item">All</a>
             </div>
         </li>
 
@@ -17,10 +17,10 @@
                 Sides
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Fries</a>
-                <a href="" class="dropdown-item">Garlic Breads</a>
-                <a href="" class="dropdown-item">Sauces</a>
-                <a href="" class="dropdown-item">More sides</a>
+                <a href="{% url 'products' %}?category=fries" class="dropdown-item">Fries</a>
+                <a href="{% url 'products' %}?category=garlic_bread,cheese" class="dropdown-item">Garlic Breads</a>
+                <a href="{% url 'products' %}?category=sauce,ketchup,garlic,mayo" class="dropdown-item">Sauces</a>
+                <a href="{% url 'products' %}?category=fries,garlic_bread,cheese,sauce,ketchup,mayo" class="dropdown-item">More sides</a>
             </div>
         </li>
 
@@ -29,9 +29,9 @@
                 Desserts
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Cakes</a>
-                <a href="" class="dropdown-item">Ice creams</a>
-                <a href="" class="dropdown-item">Cookies</a>
+                <a href="{% url 'products' %}?category=cakes,desserts" class="dropdown-item">Cakes</a>
+                <a href="{% url 'products' %}?category=ice_cream,desserts" class="dropdown-item">Ice creams</a>
+                <a href="{% url 'products' %}?category=cookies,desserts" class="dropdown-item">Cookies</a>
             </div>
         </li>
 
@@ -40,8 +40,8 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Combos</a>
-                <a href="" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=combos" class="dropdown-item">Combos</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
             </div>
         </li>
     </ul>
