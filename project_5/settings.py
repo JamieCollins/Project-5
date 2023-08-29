@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-9c_rl2g#ykkqzc()v&5_($p9mj-%)8j(zko08e9sts$87oknal
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jamiecollins-project5-hpnuqlho03e.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['project-5-jstakeawy-aa0029a9dcd5.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -121,13 +122,17 @@ WSGI_APPLICATION = 'project_5.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
